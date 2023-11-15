@@ -2,8 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Feedback;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -16,10 +16,10 @@ class ApplicationFeedbackMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        protected Feedback $feedback
+    )
+    {}
 
     /**
      * Get the message envelope.
@@ -27,7 +27,7 @@ class ApplicationFeedbackMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Application Feedback "Let’s go to work!"',
+            subject: config('app.name') . ': Application Feedback "Let’s go to work!"',
         );
     }
 
@@ -37,7 +37,15 @@ class ApplicationFeedbackMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.application_feedback',
+            with: [
+                'senderName' => $this->feedback->name,
+                'senderContact' => $this->feedback->contact,
+                'projects' => $this->feedback->projects,
+                'budget' => $this->feedback->budget,
+                'workingHours' => $this->feedback->working_hours,
+                'comment' => $this->feedback->comment,
+            ],
         );
     }
 

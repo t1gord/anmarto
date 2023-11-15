@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('test', function () {
+    $projects = \App\Models\Feedback::find(1)->projects;
+   return json_decode($projects);
+});

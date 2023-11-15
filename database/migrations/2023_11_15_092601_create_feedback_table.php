@@ -14,7 +14,12 @@ return new class extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->string('theme');
-            $table->text('message');
+            $table->string('name');
+            $table->string('contact');
+            $table->string('working_hours');
+            $table->string('budget');
+            $table->json('projects');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

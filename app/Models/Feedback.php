@@ -21,6 +21,18 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereMessage($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereTheme($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereUpdatedAt($value)
+ * @property string $name
+ * @property string $contact
+ * @property string $working_hours
+ * @property string $budget
+ * @property mixed $projects
+ * @property string|null $comment
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereBudget($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereContact($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereProjects($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Feedback whereWorkingHours($value)
  * @mixin \Eloquent
  */
 class Feedback extends Model
