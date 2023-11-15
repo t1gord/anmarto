@@ -14,7 +14,7 @@ class FeedbackController extends Controller
         $feedback = $storeApplicationFeedback->handle($request->all());
 
         try {
-            \Mail::to('webokami@yandex.ru')->send(new ApplicationFeedbackMail($feedback));
+            \Mail::to(config('mail.feedback.receiver'))->send(new ApplicationFeedbackMail($feedback));
 
             return response()->json(['success' => ['message' => 'the application was successfully sent']]);
         } catch (\Exception $e) {

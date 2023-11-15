@@ -104,6 +104,10 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'feedback' => [
+        'receiver' => env('MAIL_TO_ADDRESS_FROM_FEEDBACK', 'hello@example.com'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
