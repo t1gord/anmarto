@@ -31,6 +31,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereUpdatedAt($value)
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\ProjectContent> $content
  * @property-read int|null $content_count
+ * @property int $show_on_main
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tag> $tags
+ * @property-read int|null $tags_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereShowOnMain($value)
  * @mixin \Eloquent
  */
 class Project extends Model

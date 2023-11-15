@@ -32,12 +32,15 @@ class DatabaseSeeder extends Seeder
                 'title' => 'opteka',
                 'banner' => '/images/projects/orteka/header-image.png',
                 'subtitle' => 'We created a new website from scratch, which became the largest Russian online health products store.',
-                'description' => 'We created a new website from scratch, which became the largest Russian online health products store.'],
+                'description' => 'We created a new website from scratch, which became the largest Russian online health products store.',
+                'show_on_main' => 1,
+            ],
             [
                 'title' => 'lubava',
                 'banner' => '/images/projects/lubava/header-image.png',
                 'subtitle' => 'In just 3 weeks, we developed a mobile application for an online food delivery service',
-                'description' => 'In just 3 weeks, we developed a mobile application for an online food delivery service'
+                'description' => 'In just 3 weeks, we developed a mobile application for an online food delivery service',
+                'show_on_main' => 1,
             ],
         ]);
 
